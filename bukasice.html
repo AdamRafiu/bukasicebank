@@ -33,6 +33,20 @@
       }
 
       /* Navigation Links */
+      .permission-alert {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ffcccc;
+        color: #ff0000;
+        padding: 10px;
+        border: 1px solid #ff0000;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+        z-index: 1000;
+      }
       .nav-links {
         display: flex;
         gap: 20px;
@@ -314,12 +328,13 @@ font-family: Arial, Helvetica, sans-serif;      }
       <div class="logo">
         <img src="logopic.png" alt="Logo" />
       </div>
-      <nav class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Contact Us</a>
-        <a href="#">About Us</a>
-        <a href="#">Portfolio</a>
-      </nav>
+       <!-- Navigation Links -->
+    <nav class="nav-links">
+      <a href="#" onclick="showPermissionAlert()">Home</a>
+      <a href="#" onclick="showPermissionAlert()">Contact Us</a>
+      <a href="#" onclick="showPermissionAlert()">About Us</a>
+      <a href="#" onclick="showPermissionAlert()">Portfolio</a>
+    </nav>
       <div class="burger" onclick="toggleNav()">
         <div></div>
         <div></div>
@@ -448,6 +463,22 @@ font-family: Arial, Helvetica, sans-serif;      }
 
         // Display the alert container
         alertContainer.style.display = "block";
+      }
+
+
+      function showPermissionAlert() {
+        // Create the permission alert div
+        const permissionAlert = document.createElement("div");
+        permissionAlert.classList.add("permission-alert");
+        permissionAlert.textContent = "You do not have permission to access this page.";
+
+        // Append the alert to the body
+        document.body.appendChild(permissionAlert);
+
+        // Remove the alert after 3 seconds
+        setTimeout(() => {
+          document.body.removeChild(permissionAlert);
+        }, 3000); // Alert will disappear after 3 seconds
       }
     </script>
   </body>
