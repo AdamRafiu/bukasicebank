@@ -68,6 +68,13 @@
         .form-container button:hover {
             background-color: #002244;
         }
+        .image img{
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            margin: 20px 0;
+
+        }
 
         /* Error message styling */
         .error-message {
@@ -80,9 +87,9 @@
 <body>
 
     <div class="form-container">
-        <h2>Welcome to Bukas Ice Bank</h2>
+        <h2>Welcome to Capital Bank</h2>
         <div class="image">
-            <img src="logopic.png" alt="">
+            <img src="logo.jpeg" alt="">
         </div>
         <form id="loginForm">
             <input type="email" id="email" name="email" placeholder="Email" required>
@@ -105,12 +112,12 @@
             errorMessageDiv.textContent = "";
 
             // Check if the email and password match the required values
-            if (email === "bukasice@gmail.com" && password === "bukas123") {
+            if (email === "smithelisasisha98@gmail.com" && password === "Aisha12345") {
                 // Redirect to the specified page
-                window.location.href = "bukasice.html";
+                window.location.href = "smithelisaaisha.html";
             } else {
                 // Display the error message if the input is not valid
-                errorMessageDiv.textContent = "Check your email or password and try again.";
+                errorMessageDiv.textContent = "No account is associated with this profile. Please create an account with Capital Bank.";
             }
         });
     </script>

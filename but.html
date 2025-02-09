@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Alert Message</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        /* Button Container */
+        .button-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Button styling */
+        .button-container button {
+            width: 100px;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: blue;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button-container button:hover {
+            background-color: #00509e;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Alert Message Container */
+        .alert-container {
+            width: 70%;
+            padding: 15px;
+            border: 1px solid #ff0000;
+            border-radius: 5px;
+            background-color: #ffe6e6;
+            color: #ff0000;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            display: none; /* Hidden by default */
+
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Button Container -->
+    <div class="button-container">
+        <button onclick="showAlert()">Deposit</button>
+        <button onclick="showAlert()">Withdraw</button>
+        <!-- Alert Message Container -->
+    <div id="alert-container" class="alert-container">
+        <!-- The alert message will appear here -->
+    </div>
+    </div>
+
+    
+
+    <!-- JavaScript Alert Function -->
+    <script>
+        function showAlert() {
+            // Select the alert container
+            const alertContainer = document.getElementById('alert-container');
+            
+            // Set the alert message
+            alertContainer.textContent = "Please, there is a suspend on this account. Contact PNC Bank customer care.";
+            
+            // Display the alert container
+            alertContainer.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
